@@ -1,0 +1,7 @@
+{
+  "user": "root",
+  "password": "",
+  "host": "127.0.0.1",
+  "database": "android_restaurant_database",
+  "port": "3306"
+}
