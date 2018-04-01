@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">appcardapio</string>
+    <string name="nome">Nome</string>
+    <string name="Sexo">Sexo</string>
+    <string name="radio1">Masculino</string>
+    <string name="radio2">Feminino</string>
+    <string name="radio3">Outros</string>
+    <string name="PessoasMesa">Pessoas na mesa</string>
+    <string name="Mesa">Mesa</string>
 </resources>
