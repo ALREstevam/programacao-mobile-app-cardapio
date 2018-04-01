@@ -1,17 +1,14 @@
 # App cardápio - Programação Android
 
-## Tela 1 - Cadastro ou  Check-in
-
-*Estudar se é mais interessante fazer um cadastro com login ou check-in apenas*
+## Tela 1 - Check-in
 
 * Dados
   * Nome
   * Sexo
-  * Idade
-  * Número da mesa
+  * Número/nome da mesa
   * Pessoas na mesa
 
-* Botão: continuar/logar/cadastrar
+* Botão: continuar
 
 * Ação
   * Buscar no bd local dados inseridos no login anterior (não senha se houver) e colocar esses dados no formulário
@@ -19,6 +16,8 @@
   * Enviar qtd de pessoas na mesa para a próxima tela
   
   
+  ![](prototipação/1.PNG)
+  ![](prototipação/2.PNG)
 
 
 ## Tela 2 - Cardápio
@@ -35,6 +34,10 @@
 
 * Ação
   * Receber o cardápio do bd/api
+  
+  
+![](prototipação/3.PNG)
+![](prototipação/4.PNG)
 
 ## Tela 3 - Pedido
 
@@ -47,3 +50,5 @@
 * Ação
   * Enviar ao bd/api pedido, cliente e mesa
 
+![](prototipação/5.PNG)
+![](prototipação/6.PNG)
