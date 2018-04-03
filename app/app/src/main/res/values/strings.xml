@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">appcardapio</string>
+    <string name="food_image">food image</string>
+    <string name="food_name">Food name</string>
+    <string name="default_food_name">Food name food name food name</string>
+    <string name="default_price">R$ 000,00</string>
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</string>
+    <string name="default_amount">0</string>
 </resources>
