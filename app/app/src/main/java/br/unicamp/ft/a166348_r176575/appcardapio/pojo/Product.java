@@ -1,25 +1,54 @@
 package br.unicamp.ft.a166348_r176575.appcardapio.pojo;
 
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.support.annotation.NonNull;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import br.unicamp.ft.a166348_r176575.appcardapio.sell.SellableProduct;
 
 /**
  * Created by andre on 01/04/2018.
  */
 
-public class Product implements Comparable<Product>{
+public class Product implements Comparable<Product>,Parcelable {
 
-    private String name;
-    private String description;
-    private String picture;
-    private ProductGroup group;
-    private double price;
-    private long produtctId;
+    protected String name;
+    protected String description;
+    protected String picture;
+    protected ProductType group;
+    protected double price;
+    protected long produtctId;
 
-    public ProductGroup getGroup() {
+    public Product(String name, String description, String picture, ProductType group, double price, long produtctId) {
+        this.name = name;
+        this.description = description;
+        this.picture = picture;
+        this.group = group;
+        this.price = price;
+        this.produtctId = produtctId;
+    }
+
+
+    public static final Creator<Product> CREATOR = new Creator<Product>() {
+        @Override
+        public Product createFromParcel(Parcel in) {
+            return new Product( in );
+        }
+
+        @Override
+        public Product[] newArray(int size) {
+            return new Product[size];
+        }
+    };
+
+    public ProductType getGroup() {
         return group;
     }
 
-    public void setGroup(ProductGroup group) {
+    public void setGroup(ProductType group) {
         this.group = group;
     }
 
@@ -92,6 +121,33 @@ public class Product implements Comparable<Product>{
     public int compareTo(@NonNull Product o) {
         return 0;
     }
+
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString( this.name );
+        dest.writeString( this.description );
+        dest.writeString( this.picture );
+        dest.writeInt( this.group == null ? -1 : this.group.ordinal() );
+        dest.writeDouble( this.price );
+        dest.writeLong( this.produtctId );
+    }
+
+    protected Product(Parcel in) {
+        this.name = in.readString();
+        this.description = in.readString();
+        this.picture = in.readString();
+        int tmpGroup = in.readInt();
+        this.group = tmpGroup == -1 ? null : ProductType.values()[tmpGroup];
+        this.price = in.readDouble();
+        this.produtctId = in.readLong();
+    }
+
 }
 
 /*

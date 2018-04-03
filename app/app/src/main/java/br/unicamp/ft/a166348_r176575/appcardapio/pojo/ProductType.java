@@ -1,10 +1,12 @@
 package br.unicamp.ft.a166348_r176575.appcardapio.pojo;
 
+import java.io.Serializable;
+
 /**
  * Created by andre on 01/04/2018.
  */
 
-public enum ProductGroup {
+public enum ProductType implements Serializable{
     DOCE(2),
     SALGADO(1),
     BEBIDA(4),
@@ -12,11 +14,13 @@ public enum ProductGroup {
     BEBIDA_ALCOOLICA(5);
 
     int groupNumber;
-    ProductGroup(int gnum){
+    ProductType(int gnum){
         this.groupNumber = gnum;
     }
 
     public int getGroupNumber() {
         return groupNumber;
     }
+
+
 }
