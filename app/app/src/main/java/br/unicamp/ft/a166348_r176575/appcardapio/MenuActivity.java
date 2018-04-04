@@ -51,42 +51,75 @@ public class MenuActivity extends AppCompatActivity implements ProductItemMenuAd
         List<SellableProduct> mockProducts = new ArrayList<>();
         mockProducts.add(
                 new SellableProduct(
-                        "Produto 1",
-                        "Um produto assim bem assim e assado assim",
-                        "https://upload.wikimedia.org/wikipedia/commons/2/2e/Fast_food_meal.jpg",
+                        "Pastel de Carne",
+                        "Descrição do produto aqui uma descrição do produto",
+                        "http://www.fotografiadecomida.com.br/wp-content/uploads/2013/12/MG_7283_alta_blog-660x270.jpg",
                         ProductType.SALGADO , 20.50, 0, 0)
         );
         mockProducts.add(
                 new SellableProduct(
-                        "Produto 2",
-                        "Um produto assim bem assim e assado assim",
-                        "https://upload.wikimedia.org/wikipedia/commons/2/2e/Fast_food_meal.jpg",
+                        "Prato feito",
+                        "Descrição do produto aqui uma descrição do produto",
+                        "http://www.fotografiadecomida.com.br/wp-content/uploads/2013/12/MG_6274_m_alta_blog-660x270.jpg",
                         ProductType.SALGADO , 20.50, 0, 0)
         );
 
         mockProducts.add(
                 new SellableProduct(
-                        "Produto 3",
-                        "Um produto assim bem assim e assado assim",
-                        "https://upload.wikimedia.org/wikipedia/commons/2/2e/Fast_food_meal.jpg",
+                        "Hamburguer",
+                        "Descrição do produto aqui uma descrição do produto",
+                        "http://i.dailymail.co.uk/i/pix/2015/12/14/15/03C5A3E8000005DC-3359403-image-a-63_1450106294393.jpg",
                         ProductType.DOCE , 20.50, 0, 0)
         );
 
         mockProducts.add(
                 new SellableProduct(
-                        "Produto 4",
-                        "Um produto assim bem assim e assado assim",
-                        "https://upload.wikimedia.org/wikipedia/commons/2/2e/Fast_food_meal.jpg",
+                        "Sopa da Casa",
+                        "Descrição do produto aqui uma descrição do produto",
+                        "https://guiadacozinha.com.br/wp-content/uploads/2017/02/sopa-cremosa-legumes-1.jpg",
                         ProductType.DOCE , 20.50, 0, 0)
         );
 
         mockProducts.add(
                 new SellableProduct(
                         "Produto 5",
-                        "Um produto assim bem assim e assado assim",
+                        "Descrição do produto aqui uma descrição do produto",
                         "https://upload.wikimedia.org/wikipedia/commons/2/2e/Fast_food_meal.jpg",
                         ProductType.DOCE , 20.50, 0, 0)
         );
+        mockProducts.add(
+                new SellableProduct(
+                        "Produto 6",
+                        "Descrição do produto aqui uma descrição do produto",
+                        "https://upload.wikimedia.org/wikipedia/commons/2/2e/Fast_food_meal.jpg",
+                        ProductType.DOCE , 20.50, 0, 0)
+        );
+
+        mockProducts.add(
+                new SellableProduct(
+                        "Produto 7",
+                        "Descrição do produto aqui uma descrição do produto",
+                        "https://upload.wikimedia.org/wikipedia/commons/2/2e/Fast_food_meal.jpg",
+                        ProductType.DOCE , 20.50, 0, 0)
+        );
+
+        mockProducts.add(
+                new SellableProduct(
+                        "Produto 8",
+                        "Descrição do produto aqui uma descrição do produto",
+                        "https://upload.wikimedia.org/wikipedia/commons/2/2e/Fast_food_meal.jpg",
+                        ProductType.DOCE , 20.50, 0, 0)
+        );
+
+        mockProducts.add(
+                new SellableProduct(
+                        "Produto 9",
+                        "Descrição do produto aqui uma descrição do produto",
+                        "https://upload.wikimedia.org/wikipedia/commons/2/2e/Fast_food_meal.jpg",
+                        ProductType.DOCE , 20.50, 0, 0)
+        );
+
+
 
 
 

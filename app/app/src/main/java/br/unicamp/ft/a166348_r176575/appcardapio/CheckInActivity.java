@@ -16,7 +16,7 @@ public class CheckInActivity extends AppCompatActivity {
         setContentView( R.layout.activity_check_in );
 
         spinner = (Spinner)findViewById(R.id.spinner1);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(MainActivity.this,
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item,paths);
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
