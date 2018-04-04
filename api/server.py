@@ -1,6 +1,5 @@
 from flask import Flask, request, jsonify
 from flask_restful import Resource, Api
-#from sqlalchemy import create_engine
 from json import dumps
 import json
 import mysqlconn
@@ -78,14 +77,20 @@ class Order(Resource):
         print(query)
         return db.insertReadyMulti(query)
 
-        
+class Start(Resource):
+	def get(self):
+		s = jsonify('{"Status":"Server OK"}')
+		print(s)
+		return s
 
+        
 
 
 api.add_resource(Products, '/products') # Route_1
 api.add_resource(Restaurant, '/restaurant') # Route_2
 api.add_resource(Visit, '/visit') # Route_3
 api.add_resource(Order, '/order') # Route_4
+api.add_resource(Start, '/test') # Route_4
 
 
 if __name__ == '__main__':
