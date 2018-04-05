@@ -75,22 +75,14 @@ class Order(Resource):
             query += 'INSERT INTO order_contains (FK_product_id, FK_order_id) VALUES ({}, @ordid);'.format(productId)
 
         print(query)
-        return db.insertReadyMulti(query)
+        return db.insertPreparedMulti(query)
 
-class Start(Resource):
-	def get(self):
-		s = jsonify('{"Status":"Server OK"}')
-		print(s)
-		return s
-
-        
 
 
 api.add_resource(Products, '/products') # Route_1
 api.add_resource(Restaurant, '/restaurant') # Route_2
 api.add_resource(Visit, '/visit') # Route_3
 api.add_resource(Order, '/order') # Route_4
-api.add_resource(Start, '/test') # Route_4
 
 
 if __name__ == '__main__':

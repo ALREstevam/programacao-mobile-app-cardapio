@@ -78,6 +78,17 @@ class DbConnection:
             print(traceback.format_exc())
             return {'status': 'error'}
 
+    def execute(self, query):
+        try:
+            connection = self.getConn()
+            cursor = connection.cursor()
+            cursor.execute(query)
+            json_data = self.dictfetchall(cursor)
+            return jsonify(json_data)
+        except:
+            print(traceback.format_exc())
+            return {'status': 'error'}
+
 
     def insertByDict(self, query, insertData):
         """
@@ -101,7 +112,7 @@ class DbConnection:
         connection.commit()
         return {'status': 'success'}
 
-    def insertReadyMulti(self, query):
+    def insertPreparedMulti(self, query):
         """
         Executes an INSERT command with multiple lines
         """
