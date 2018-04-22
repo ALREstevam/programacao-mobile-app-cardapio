@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/api.iml" filepath="$PROJECT_DIR$/.idea/api.iml" />
+      <module fileurl="file://$USER_HOME$/PycharmProjects/csvread/.idea/csvread.iml" filepath="$USER_HOME$/PycharmProjects/csvread/.idea/csvread.iml" />
     </modules>
   </component>
 </project>
