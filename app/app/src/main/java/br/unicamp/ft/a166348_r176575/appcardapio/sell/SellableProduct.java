@@ -8,10 +8,39 @@ import br.unicamp.ft.a166348_r176575.appcardapio.pojo.ProductType;
 
 public class SellableProduct extends Product implements Sellable  {
     private int amount;
+    private String state;
 
     public SellableProduct(String name, String description, String picture, ProductType group, double price, long produtctId, int amount) {
         super( name, description, picture, group, price, produtctId );
         this.amount = amount;
+    }
+
+    public SellableProduct(String name, String description, String picture, ProductType group, double price, long produtctId, int amount, String state) {
+        super( name, description, picture, group, price, produtctId );
+        this.amount = amount;
+        this.state = state;
+    }
+
+    public int getAmount() {
+        return amount;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public SellableProduct(Parcel in, int amount, String state) {
+        super( in );
+        this.amount = amount;
+        this.state = state;
     }
 
     @Override

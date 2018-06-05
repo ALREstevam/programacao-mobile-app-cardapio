@@ -72,7 +72,8 @@ public class ProductItemMenuAdapter extends RecyclerView.Adapter<ProductItemMenu
      */
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {//Toda vez que a interface precisar ser impressa (no scroll)
-        holder.itemView.setBackgroundColor(selectedPos == position ? Color.GREEN :  Color.TRANSPARENT);
+        //holder.itemView.setBackgroundColor(selectedPos == position ? Color.GREEN :  Color.TRANSPARENT);
+        //holder.itemView.setBackgroundColor( Color.TRANSPARENT);
         holder.itemView.setSelected(selectedPos == position);
 
 

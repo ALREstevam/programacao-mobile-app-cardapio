@@ -54,14 +54,14 @@ public class MenuActivity extends AppCompatActivity implements ProductItemMenuAd
                         "Pastel de Carne",
                         "Descrição do produto aqui uma descrição do produto",
                         "http://www.fotografiadecomida.com.br/wp-content/uploads/2013/12/MG_7283_alta_blog-660x270.jpg",
-                        ProductType.SALGADO , 20.50, 0, 0)
+                        ProductType.SALGADO , 20.50, 0, 0, "Não pedido")
         );
         mockProducts.add(
                 new SellableProduct(
                         "Prato feito",
                         "Descrição do produto aqui uma descrição do produto",
                         "http://www.fotografiadecomida.com.br/wp-content/uploads/2013/12/MG_6274_m_alta_blog-660x270.jpg",
-                        ProductType.SALGADO , 20.50, 0, 0)
+                        ProductType.SALGADO , 20.50, 0, 0, "Não pedido")
         );
 
         mockProducts.add(
@@ -69,7 +69,7 @@ public class MenuActivity extends AppCompatActivity implements ProductItemMenuAd
                         "Hamburguer",
                         "Descrição do produto aqui uma descrição do produto",
                         "http://i.dailymail.co.uk/i/pix/2015/12/14/15/03C5A3E8000005DC-3359403-image-a-63_1450106294393.jpg",
-                        ProductType.DOCE , 20.50, 0, 0)
+                        ProductType.DOCE , 20.50, 0, 0, "Não pedido")
         );
 
         mockProducts.add(
@@ -77,7 +77,7 @@ public class MenuActivity extends AppCompatActivity implements ProductItemMenuAd
                         "Sopa da Casa",
                         "Descrição do produto aqui uma descrição do produto",
                         "https://guiadacozinha.com.br/wp-content/uploads/2017/02/sopa-cremosa-legumes-1.jpg",
-                        ProductType.DOCE , 20.50, 0, 0)
+                        ProductType.DOCE , 20.50, 0, 0, "Não pedido")
         );
 
         mockProducts.add(
@@ -85,14 +85,14 @@ public class MenuActivity extends AppCompatActivity implements ProductItemMenuAd
                         "Produto 5",
                         "Descrição do produto aqui uma descrição do produto",
                         "https://upload.wikimedia.org/wikipedia/commons/2/2e/Fast_food_meal.jpg",
-                        ProductType.DOCE , 20.50, 0, 0)
+                        ProductType.DOCE , 20.50, 0, 0, "Não pedido")
         );
         mockProducts.add(
                 new SellableProduct(
                         "Produto 6",
                         "Descrição do produto aqui uma descrição do produto",
                         "https://upload.wikimedia.org/wikipedia/commons/2/2e/Fast_food_meal.jpg",
-                        ProductType.DOCE , 20.50, 0, 0)
+                        ProductType.DOCE , 20.50, 0, 0, "Não pedido")
         );
 
         mockProducts.add(
@@ -100,7 +100,7 @@ public class MenuActivity extends AppCompatActivity implements ProductItemMenuAd
                         "Produto 7",
                         "Descrição do produto aqui uma descrição do produto",
                         "https://upload.wikimedia.org/wikipedia/commons/2/2e/Fast_food_meal.jpg",
-                        ProductType.DOCE , 20.50, 0, 0)
+                        ProductType.DOCE , 20.50, 0, 0,"Não pedido")
         );
 
         mockProducts.add(
@@ -108,7 +108,7 @@ public class MenuActivity extends AppCompatActivity implements ProductItemMenuAd
                         "Produto 8",
                         "Descrição do produto aqui uma descrição do produto",
                         "https://upload.wikimedia.org/wikipedia/commons/2/2e/Fast_food_meal.jpg",
-                        ProductType.DOCE , 20.50, 0, 0)
+                        ProductType.DOCE , 20.50, 0, 0,"Não pedido")
         );
 
         mockProducts.add(
@@ -116,7 +116,7 @@ public class MenuActivity extends AppCompatActivity implements ProductItemMenuAd
                         "Produto 9",
                         "Descrição do produto aqui uma descrição do produto",
                         "https://upload.wikimedia.org/wikipedia/commons/2/2e/Fast_food_meal.jpg",
-                        ProductType.DOCE , 20.50, 0, 0)
+                        ProductType.DOCE , 20.50, 0, 0,"Não pedido")
         );
 
 

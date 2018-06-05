@@ -31,7 +31,6 @@ public class Product implements Comparable<Product>,Parcelable {
         this.produtctId = produtctId;
     }
 
-
     public static final Creator<Product> CREATOR = new Creator<Product>() {
         @Override
         public Product createFromParcel(Parcel in) {

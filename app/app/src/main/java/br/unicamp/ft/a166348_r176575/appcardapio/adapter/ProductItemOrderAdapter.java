@@ -41,10 +41,8 @@ public class ProductItemOrderAdapter extends RecyclerView.Adapter<ProductItemOrd
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {//Toda vez que a interface precisar ser impressa (no scroll)
-        holder.itemView.setBackgroundColor(selectedPos == position ? Color.GREEN :  Color.TRANSPARENT);
+        //holder.itemView.setBackgroundColor(selectedPos == position ? Color.GREEN :  Color.TRANSPARENT);
         holder.itemView.setSelected(selectedPos == position);
-
-
         holder.bind(products.getSellables().get( position ), listener);
     }
 
@@ -66,10 +64,7 @@ public class ProductItemOrderAdapter extends RecyclerView.Adapter<ProductItemOrd
         private TextView description;
         private TextView amountField;
         private TextView total;
-
-
-
-
+        private TextView state;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -80,6 +75,7 @@ public class ProductItemOrderAdapter extends RecyclerView.Adapter<ProductItemOrd
             description = (TextView) itemView.findViewById( R.id.description);
             amountField      = (TextView) itemView.findViewById(R.id.amountField);
             total = (TextView) itemView.findViewById( R.id.total);
+            state = (TextView) itemView.findViewById( R.id.state );
 
 
         }
@@ -98,6 +94,7 @@ public class ProductItemOrderAdapter extends RecyclerView.Adapter<ProductItemOrd
             this.amountField.setText( "x" + String.valueOf( product.getAmountInCart()) );
             this.total.setText( String.format( "R$ %.2f", product.getTotalPrice() ) );
             this.description.setText( product.getDescription() );
+            //this.state.setText( product.getState() );
 
 
             itemView.setOnClickListener(new View.OnClickListener() {
@@ -106,8 +103,6 @@ public class ProductItemOrderAdapter extends RecyclerView.Adapter<ProductItemOrd
                     ViewHolder.this.onClick();//Redirecionando o gatilho para si mesmo
                 }
             });
-
-
         }
 
         public void onClick(){
