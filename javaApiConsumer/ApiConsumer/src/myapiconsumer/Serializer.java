@@ -28,14 +28,6 @@ public class Serializer<T> {
         this.typeParameterClass = (Class<T>) Object.class;
     }
     
-    /**
-     * Map<String, Object> person = new HashMap<String, Object>() {{
-        put("name", "Foo");
-        put("age", 28);
-      }};
-     * @param input
-     * @return 
-     */
     public String serialize(Map<String, Object> input){    
         return genson.serialize(input);
     }

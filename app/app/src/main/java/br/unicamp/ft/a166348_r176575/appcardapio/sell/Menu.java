@@ -1,6 +1,5 @@
 package br.unicamp.ft.a166348_r176575.appcardapio.sell;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -11,6 +10,13 @@ public class Menu {
     private List<SellableProduct> menuProducts;
 
     public Menu(List<SellableProduct> menuProducts) {
+        this.menuProducts = menuProducts;
+    }
+
+    public Menu() {
+    }
+
+    public void setMenuProducts(List<SellableProduct> menuProducts) {
         this.menuProducts = menuProducts;
     }
 

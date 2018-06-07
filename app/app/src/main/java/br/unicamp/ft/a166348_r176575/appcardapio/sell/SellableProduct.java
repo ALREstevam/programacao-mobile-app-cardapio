@@ -2,21 +2,20 @@ package br.unicamp.ft.a166348_r176575.appcardapio.sell;
 
 import android.os.Parcel;
 
-import br.unicamp.ft.a166348_r176575.appcardapio.pojo.Product;
-import br.unicamp.ft.a166348_r176575.appcardapio.pojo.ProductType;
+import br.unicamp.ft.a166348_r176575.appcardapio.pojo.ProductSendable;
 
 
-public class SellableProduct extends Product implements Sellable  {
+public class SellableProduct extends ProductSendable implements Sellable  {
     private int amount;
     private String state;
 
-    public SellableProduct(String name, String description, String picture, ProductType group, double price, long produtctId, int amount) {
-        super( name, description, picture, group, price, produtctId );
-        this.amount = amount;
+    public SellableProduct(Parcel in, String state) {
+        super( in );
+        this.state = state;
     }
 
-    public SellableProduct(String name, String description, String picture, ProductType group, double price, long produtctId, int amount, String state) {
-        super( name, description, picture, group, price, produtctId );
+    public SellableProduct(String name, String description, String picture, double price, long produtctId, int amount, String state) {
+        super( name, description, picture, price, produtctId );
         this.amount = amount;
         this.state = state;
     }
@@ -85,7 +84,6 @@ public class SellableProduct extends Product implements Sellable  {
         dest.writeString( this.name );
         dest.writeString( this.description );
         dest.writeString( this.picture );
-        dest.writeInt( this.group == null ? -1 : this.group.ordinal() );
         dest.writeDouble( this.price );
         dest.writeLong( this.produtctId );
     }
@@ -96,8 +94,6 @@ public class SellableProduct extends Product implements Sellable  {
         this.name = in.readString();
         this.description = in.readString();
         this.picture = in.readString();
-        int tmpGroup = in.readInt();
-        this.group = tmpGroup == -1 ? null : ProductType.values()[tmpGroup];
         this.price = in.readDouble();
         this.produtctId = in.readLong();
     }

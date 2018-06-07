@@ -92,7 +92,8 @@
         android:layout_marginLeft="10dp"
         android:layout_below="@id/Texto4"
         android:background="@android:drawable/btn_dropdown"
-        android:spinnerMode="dropdown"/>
+        android:spinnerMode="dropdown"
+        />
 
 
     <Button

@@ -3,8 +3,6 @@ package br.unicamp.ft.a166348_r176575.appcardapio.sell;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -40,8 +38,6 @@ public class Order implements Parcelable {
         }
         return price;
     }
-
-
 
     @Override
     public int describeContents() {

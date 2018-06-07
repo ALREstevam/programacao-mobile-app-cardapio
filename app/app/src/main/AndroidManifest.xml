@@ -23,4 +23,7 @@
         <activity android:name=".CloseOrderActivity"></activity>
     </application>
 
+
+
+
 </manifest>

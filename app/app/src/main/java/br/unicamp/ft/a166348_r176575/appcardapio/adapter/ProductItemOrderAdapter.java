@@ -1,6 +1,5 @@
 package br.unicamp.ft.a166348_r176575.appcardapio.adapter;
 
-import android.graphics.Color;
 import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -13,7 +12,6 @@ import com.facebook.drawee.view.SimpleDraweeView;
 import br.unicamp.ft.a166348_r176575.appcardapio.R;
 import br.unicamp.ft.a166348_r176575.appcardapio.sell.Order;
 import br.unicamp.ft.a166348_r176575.appcardapio.sell.SellableProduct;
-
 
 
 public class ProductItemOrderAdapter extends RecyclerView.Adapter<ProductItemOrderAdapter.ViewHolder> {
@@ -94,7 +92,7 @@ public class ProductItemOrderAdapter extends RecyclerView.Adapter<ProductItemOrd
             this.amountField.setText( "x" + String.valueOf( product.getAmountInCart()) );
             this.total.setText( String.format( "R$ %.2f", product.getTotalPrice() ) );
             this.description.setText( product.getDescription() );
-            //this.state.setText( product.getState() );
+            this.state.setText( product.getState() );
 
 
             itemView.setOnClickListener(new View.OnClickListener() {

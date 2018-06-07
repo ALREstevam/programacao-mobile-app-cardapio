@@ -40,9 +40,20 @@ class Visit(Resource):
         pprint(request.json)
 
         tabid = request.json['tableId']
-        name = request.json['ClientName']
-        clisex = request.json['ClientSex']
-        peepontable = request.json['PeopleOnTable']
+        name = request.json['clientName']
+        clisex = request.json['clientSex']
+        peepontable = request.json['peopleOnTable']
+
+        '''
+        {"clientName":"bbbbbnnnnnbb, ","clientSex":"F","peopleOnTable":5,"tableId":1}
+
+        {
+            "tableId":3,
+            "ClientName":"Abraão",
+            "ClientSex":"M",
+            "PeopleOnTable":15
+        }
+        '''
 
 
         #query = "INSERT INTO visit (FK_table, client_name, client_sex, people_on_table) VALUES (%(tableid)s, %(cliname)s, %(clisex)s, %(peopontable)s)"

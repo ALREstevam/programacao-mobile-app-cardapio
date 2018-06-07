@@ -19,6 +19,8 @@ public class Product {
     "type": "DOCE"
     */
     
+
+    
     private String name;
     private String description;
     private String picture;
