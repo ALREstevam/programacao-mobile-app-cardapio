@@ -3,6 +3,7 @@ package br.unicamp.ft.a166348_r176575.appcardapio.adapter;
 import android.graphics.Color;
 import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +14,6 @@ import com.facebook.drawee.view.SimpleDraweeView;
 import br.unicamp.ft.a166348_r176575.appcardapio.R;
 import br.unicamp.ft.a166348_r176575.appcardapio.sell.Order;
 import br.unicamp.ft.a166348_r176575.appcardapio.sell.SellableProduct;
-
 
 
 public class ProductItemOrderAdapter extends RecyclerView.Adapter<ProductItemOrderAdapter.ViewHolder> {
@@ -41,10 +41,8 @@ public class ProductItemOrderAdapter extends RecyclerView.Adapter<ProductItemOrd
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {//Toda vez que a interface precisar ser impressa (no scroll)
-        holder.itemView.setBackgroundColor(selectedPos == position ? Color.GREEN :  Color.TRANSPARENT);
+        //holder.itemView.setBackgroundColor(selectedPos == position ? Color.GREEN :  Color.TRANSPARENT);
         holder.itemView.setSelected(selectedPos == position);
-
-
         holder.bind(products.getSellables().get( position ), listener);
     }
 
@@ -66,22 +64,20 @@ public class ProductItemOrderAdapter extends RecyclerView.Adapter<ProductItemOrd
         private TextView description;
         private TextView amountField;
         private TextView total;
-
-
-
-
+        private TextView state;
 
         public ViewHolder(View itemView) {
             super(itemView);
 
-            image      = (SimpleDraweeView) itemView.findViewById(R.id.image);
-            name        = (TextView) itemView.findViewById(R.id.name);
-            price      = (TextView) itemView.findViewById(R.id.price);
-            description = (TextView) itemView.findViewById( R.id.description);
-            amountField      = (TextView) itemView.findViewById(R.id.amountField);
-            total = (TextView) itemView.findViewById( R.id.total);
+            image           = (SimpleDraweeView)    itemView.findViewById(R.id.image);
+            name            = (TextView)            itemView.findViewById(R.id.name);
+            price           = (TextView)            itemView.findViewById(R.id.price);
+            description     = (TextView)            itemView.findViewById( R.id.description);
+            amountField     = (TextView)            itemView.findViewById(R.id.amountField);
+            total           = (TextView)            itemView.findViewById( R.id.total);
+            state           = (TextView)            itemView.findViewById( R.id.state );
 
-
+            Log.e("", state.getText().toString());
         }
 
 
@@ -98,6 +94,7 @@ public class ProductItemOrderAdapter extends RecyclerView.Adapter<ProductItemOrd
             this.amountField.setText( "x" + String.valueOf( product.getAmountInCart()) );
             this.total.setText( String.format( "R$ %.2f", product.getTotalPrice() ) );
             this.description.setText( product.getDescription() );
+            this.state.setText( product.getState() );
 
 
             itemView.setOnClickListener(new View.OnClickListener() {
@@ -106,8 +103,6 @@ public class ProductItemOrderAdapter extends RecyclerView.Adapter<ProductItemOrd
                     ViewHolder.this.onClick();//Redirecionando o gatilho para si mesmo
                 }
             });
-
-
         }
 
         public void onClick(){

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:background="#479fff"
+    android:background="#e2e2e2"
     android:layout_margin="5dp"
     android:elevation="2dp"
 
@@ -53,6 +53,21 @@
         android:textStyle="italic"
 
         android:layout_below="@+id/name"
+        android:layout_toEndOf="@+id/image"
+        android:layout_toStartOf="@id/prices"
+        />
+
+    <!-- FOOD STATE -->
+    <TextView
+        android:id="@+id/state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:maxLines="1"
+        android:text="Status: não pedido"
+        android:textStyle="italic|bold"
+
+        android:layout_below="@+id/description"
         android:layout_toEndOf="@+id/image"
         android:layout_toStartOf="@id/prices"
         />

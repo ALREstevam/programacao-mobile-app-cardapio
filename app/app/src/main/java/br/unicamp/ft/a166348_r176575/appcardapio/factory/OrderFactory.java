@@ -5,7 +5,6 @@ import java.util.List;
 
 import br.unicamp.ft.a166348_r176575.appcardapio.sell.Menu;
 import br.unicamp.ft.a166348_r176575.appcardapio.sell.Order;
-import br.unicamp.ft.a166348_r176575.appcardapio.sell.Sellable;
 import br.unicamp.ft.a166348_r176575.appcardapio.sell.SellableProduct;
 
 /**

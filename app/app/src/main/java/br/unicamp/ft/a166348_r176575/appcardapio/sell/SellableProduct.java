@@ -2,16 +2,68 @@ package br.unicamp.ft.a166348_r176575.appcardapio.sell;
 
 import android.os.Parcel;
 
-import br.unicamp.ft.a166348_r176575.appcardapio.pojo.Product;
-import br.unicamp.ft.a166348_r176575.appcardapio.pojo.ProductType;
+import br.unicamp.ft.a166348_r176575.appcardapio.pojo.ProdStatus;
+import br.unicamp.ft.a166348_r176575.appcardapio.pojo.ProdStatusHelp;
+import br.unicamp.ft.a166348_r176575.appcardapio.pojo.ProductSendable;
 
 
-public class SellableProduct extends Product implements Sellable  {
+public class SellableProduct extends ProductSendable implements Sellable  {
     private int amount;
+    private String state;
+    private ProdStatus statusEnum;
+    private long localId;
 
-    public SellableProduct(String name, String description, String picture, ProductType group, double price, long produtctId, int amount) {
-        super( name, description, picture, group, price, produtctId );
+    public SellableProduct(Parcel in, String state) {
+        super( in );
+        this.state = state;
+        this.statusEnum = ProdStatusHelp.fromText( state );
+    }
+
+    public SellableProduct(String name, String description, String picture, double price, long produtctId, int amount, String state) {
+        super( name, description, picture, price, produtctId );
         this.amount = amount;
+        this.state = state;
+        this.statusEnum = ProdStatusHelp.fromText( state );
+    }
+
+    public SellableProduct(Parcel in, int amount, String state, ProdStatus statusEnum, long localId) {
+        super( in );
+        this.amount = amount;
+        this.state = state;
+        this.statusEnum = statusEnum;
+        this.localId = localId;
+    }
+
+
+
+    public SellableProduct(String name, String description, String picture, double price, long produtctId, int amount, String state, ProdStatus statusEnum, long localId) {
+        super( name, description, picture, price, produtctId );
+        this.amount = amount;
+        this.state = state;
+        this.statusEnum = statusEnum;
+        this.localId = localId;
+    }
+
+    public int getAmount() {
+        return amount;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public SellableProduct(Parcel in, int amount, String state) {
+        super( in );
+        this.amount = amount;
+        this.state = state;
     }
 
     @Override
@@ -56,7 +108,6 @@ public class SellableProduct extends Product implements Sellable  {
         dest.writeString( this.name );
         dest.writeString( this.description );
         dest.writeString( this.picture );
-        dest.writeInt( this.group == null ? -1 : this.group.ordinal() );
         dest.writeDouble( this.price );
         dest.writeLong( this.produtctId );
     }
@@ -67,8 +118,6 @@ public class SellableProduct extends Product implements Sellable  {
         this.name = in.readString();
         this.description = in.readString();
         this.picture = in.readString();
-        int tmpGroup = in.readInt();
-        this.group = tmpGroup == -1 ? null : ProductType.values()[tmpGroup];
         this.price = in.readDouble();
         this.produtctId = in.readLong();
     }
@@ -84,4 +133,36 @@ public class SellableProduct extends Product implements Sellable  {
             return new SellableProduct[size];
         }
     };
+
+    public ProdStatus getStatusEnum() {
+        return statusEnum;
+    }
+
+    public void setStatusEnum(ProdStatus statusEnum) {
+        this.statusEnum = statusEnum;
+        this.state = statusEnum.getStatusAsText();
+    }
+
+    public long getLocalId() {
+        return localId;
+    }
+
+    public void setLocalId(long localId) {
+        this.localId = localId;
+    }
+
+    @Override
+    public String toString() {
+        return "SellableProduct{" +
+                "name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", picture='" + picture + '\'' +
+                ", price=" + price +
+                ", produtctId=" + produtctId +
+                ", amount=" + amount +
+                ", state='" + state + '\'' +
+                ", statusEnum=" + statusEnum +
+                ", localId=" + localId +
+                '}';
+    }
 }

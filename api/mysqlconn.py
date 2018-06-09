@@ -57,7 +57,7 @@ class DbConnection:
         """
         Returns a valid connection
         """
-        if not self.connection or not self.connection.open:
+        if not self.connection or not self.connection.open():
             self.connect()
             return self.connection
         else:
@@ -77,6 +77,20 @@ class DbConnection:
         except:
             print(traceback.format_exc())
             return {'status': 'error'}
+
+    def execute(self, query):
+        try:
+            connection = self.getConn()
+            cursor = connection.cursor(buffered=True)
+            #cursor.execute(query)
+            for result in cursor.execute(query, multi=True):
+                pass
+            json_data = self.dictfetchall(cursor)
+            return jsonify(json_data)
+        except:
+            print(traceback.format_exc())
+            return {'status': 'error'}
+
 
 
     def insertByDict(self, query, insertData):
@@ -101,7 +115,7 @@ class DbConnection:
         connection.commit()
         return {'status': 'success'}
 
-    def insertReadyMulti(self, query):
+    def insertPreparedMulti(self, query):
         """
         Executes an INSERT command with multiple lines
         """

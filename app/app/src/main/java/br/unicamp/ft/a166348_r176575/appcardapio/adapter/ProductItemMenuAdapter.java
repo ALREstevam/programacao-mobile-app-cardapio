@@ -1,25 +1,17 @@
 package br.unicamp.ft.a166348_r176575.appcardapio.adapter;
 
-import android.content.Intent;
-import android.graphics.Color;
 import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.facebook.drawee.view.SimpleDraweeView;
 
-import java.net.PortUnreachableException;
-
 import br.unicamp.ft.a166348_r176575.appcardapio.R;
-import br.unicamp.ft.a166348_r176575.appcardapio.pojo.Product;
 import br.unicamp.ft.a166348_r176575.appcardapio.sell.Menu;
 import br.unicamp.ft.a166348_r176575.appcardapio.sell.SellableProduct;
 
@@ -72,7 +64,8 @@ public class ProductItemMenuAdapter extends RecyclerView.Adapter<ProductItemMenu
      */
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {//Toda vez que a interface precisar ser impressa (no scroll)
-        holder.itemView.setBackgroundColor(selectedPos == position ? Color.GREEN :  Color.TRANSPARENT);
+        //holder.itemView.setBackgroundColor(selectedPos == position ? Color.GREEN :  Color.TRANSPARENT);
+        //holder.itemView.setBackgroundColor( Color.TRANSPARENT);
         holder.itemView.setSelected(selectedPos == position);
 
 

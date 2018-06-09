@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">appcardapio</string>
+    <string name="app_name">Pedidos App</string>
     <string name="food_image">food image</string>
     <string name="food_name">Food name</string>
     <string name="default_food_name">Food name food name food name</string>
@@ -13,4 +13,5 @@
     <string name="radio3">Outros</string>
     <string name="PessoasMesa">Pessoas na mesa</string>
     <string name="Mesa">Mesa</string>
+    <string name="default_notification_channel_id">7777</string>
 </resources>
