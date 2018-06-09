@@ -95,16 +95,11 @@ public class MenuActivity extends AppCompatActivity implements ProductItemMenuAd
     void onCloseOrderClicked(View view){
         Order ord = new OrderFactory().createOrder( this.menu );
 
-        if(ord.hasSellable()){
-            Intent intent = new Intent(this, CloseOrderActivity.class);
-            //intent.putExtra(INTENT_ORDER, ord);
-            intent.putExtra(INTENT_ORDER, ord);
-            startActivity(intent);
 
-        }
-        else{
-            new SimpleAlert().alertOk( "Não há produtos adicionados", "Parece que você não adicionou nenhum produto ao seu pedido, adicione um para poder concluí-lo", this );
-        }
+        Intent intent = new Intent(this, CloseOrderActivity.class);
+        intent.putExtra(INTENT_ORDER, ord);
+        startActivity(intent);
+
 
     }
 

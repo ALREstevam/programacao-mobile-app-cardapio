@@ -2,22 +2,46 @@ package br.unicamp.ft.a166348_r176575.appcardapio.sell;
 
 import android.os.Parcel;
 
+import br.unicamp.ft.a166348_r176575.appcardapio.pojo.ProdStatus;
+import br.unicamp.ft.a166348_r176575.appcardapio.pojo.ProdStatusHelp;
 import br.unicamp.ft.a166348_r176575.appcardapio.pojo.ProductSendable;
 
 
 public class SellableProduct extends ProductSendable implements Sellable  {
     private int amount;
     private String state;
+    private ProdStatus statusEnum;
+    private long localId;
 
     public SellableProduct(Parcel in, String state) {
         super( in );
         this.state = state;
+        this.statusEnum = ProdStatusHelp.fromText( state );
     }
 
     public SellableProduct(String name, String description, String picture, double price, long produtctId, int amount, String state) {
         super( name, description, picture, price, produtctId );
         this.amount = amount;
         this.state = state;
+        this.statusEnum = ProdStatusHelp.fromText( state );
+    }
+
+    public SellableProduct(Parcel in, int amount, String state, ProdStatus statusEnum, long localId) {
+        super( in );
+        this.amount = amount;
+        this.state = state;
+        this.statusEnum = statusEnum;
+        this.localId = localId;
+    }
+
+
+
+    public SellableProduct(String name, String description, String picture, double price, long produtctId, int amount, String state, ProdStatus statusEnum, long localId) {
+        super( name, description, picture, price, produtctId );
+        this.amount = amount;
+        this.state = state;
+        this.statusEnum = statusEnum;
+        this.localId = localId;
     }
 
     public int getAmount() {
@@ -109,4 +133,36 @@ public class SellableProduct extends ProductSendable implements Sellable  {
             return new SellableProduct[size];
         }
     };
+
+    public ProdStatus getStatusEnum() {
+        return statusEnum;
+    }
+
+    public void setStatusEnum(ProdStatus statusEnum) {
+        this.statusEnum = statusEnum;
+        this.state = statusEnum.getStatusAsText();
+    }
+
+    public long getLocalId() {
+        return localId;
+    }
+
+    public void setLocalId(long localId) {
+        this.localId = localId;
+    }
+
+    @Override
+    public String toString() {
+        return "SellableProduct{" +
+                "name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", picture='" + picture + '\'' +
+                ", price=" + price +
+                ", produtctId=" + produtctId +
+                ", amount=" + amount +
+                ", state='" + state + '\'' +
+                ", statusEnum=" + statusEnum +
+                ", localId=" + localId +
+                '}';
+    }
 }

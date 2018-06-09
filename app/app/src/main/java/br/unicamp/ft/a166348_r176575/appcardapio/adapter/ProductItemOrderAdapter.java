@@ -1,7 +1,9 @@
 package br.unicamp.ft.a166348_r176575.appcardapio.adapter;
 
+import android.graphics.Color;
 import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -67,15 +69,15 @@ public class ProductItemOrderAdapter extends RecyclerView.Adapter<ProductItemOrd
         public ViewHolder(View itemView) {
             super(itemView);
 
-            image      = (SimpleDraweeView) itemView.findViewById(R.id.image);
-            name        = (TextView) itemView.findViewById(R.id.name);
-            price      = (TextView) itemView.findViewById(R.id.price);
-            description = (TextView) itemView.findViewById( R.id.description);
-            amountField      = (TextView) itemView.findViewById(R.id.amountField);
-            total = (TextView) itemView.findViewById( R.id.total);
-            state = (TextView) itemView.findViewById( R.id.state );
+            image           = (SimpleDraweeView)    itemView.findViewById(R.id.image);
+            name            = (TextView)            itemView.findViewById(R.id.name);
+            price           = (TextView)            itemView.findViewById(R.id.price);
+            description     = (TextView)            itemView.findViewById( R.id.description);
+            amountField     = (TextView)            itemView.findViewById(R.id.amountField);
+            total           = (TextView)            itemView.findViewById( R.id.total);
+            state           = (TextView)            itemView.findViewById( R.id.state );
 
-
+            Log.e("", state.getText().toString());
         }
 
 

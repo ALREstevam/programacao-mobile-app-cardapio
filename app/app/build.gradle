@@ -40,4 +40,12 @@ dependencies {
     implementation files('libs/gson-2.8.0.jar')
     implementation files('libs/gson-2.8.0-javadoc.jar')
     implementation 'com.owlike:genson:1.4'
+
+
+    //Firebase
+    implementation 'com.google.firebase:firebase-core:16.0.0'
+    implementation 'com.google.firebase:firebase-messaging:17.0.0'
+    implementation 'com.firebase:firebase-jobdispatcher-with-gcm-dep:0.6.0'
 }
+
+apply plugin: 'com.google.gms.google-services'

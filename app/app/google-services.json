@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "1000591242146",
+    "firebase_url": "https://appcardapio-12b78.firebaseio.com",
+    "project_id": "appcardapio-12b78",
+    "storage_bucket": "appcardapio-12b78.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1000591242146:android:f80c1ff4da747a53",
+        "android_client_info": {
+          "package_name": "br.unicamp.ft.a166348_r176575.appcardapio"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1000591242146-g79narf2nfq5n3c3ak8h58srog1d20gp.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "1000591242146-g79narf2nfq5n3c3ak8h58srog1d20gp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWgHWUFhjbI421Q7PkaL9dF7cc3S6icqc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

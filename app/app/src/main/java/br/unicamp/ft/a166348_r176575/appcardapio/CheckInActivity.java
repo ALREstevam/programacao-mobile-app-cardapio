@@ -17,6 +17,7 @@ import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.google.firebase.iid.FirebaseInstanceId;
 import com.owlike.genson.GenericType;
 import com.owlike.genson.Genson;
 
@@ -40,6 +41,7 @@ public class CheckInActivity extends AppCompatActivity {
     private static final String[] paths = new String[9];
     private HashMap<String, Integer> hashMapMesas;
     public static String VISIT_ID_INTENT = "visitId";
+    private String firebaseUserToken;
 
 
     private EditText mEditText;
@@ -55,6 +57,7 @@ public class CheckInActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
+        firebaseUserToken = FirebaseInstanceId.getInstance().getToken();
         setContentView( R.layout.activity_check_in );
 
 
@@ -151,16 +154,10 @@ public class CheckInActivity extends AppCompatActivity {
                 contentValues.put("name", nome);
                 contentValues.put("people_on_table", peopleOnTable);
                 contentValues.put("client_sex", clientSex);
-
                 sqLiteDatabase.insert("client_data", null, contentValues);
             }
 
-/*{
-	"tableId":3,
-	"ClientName":"Abraão",
-	"ClientSex":"M",
-	"PeopleOnTable":15
-}*/
+
 
             final Context referenceContext = this;
             final Class referenceClass = MenuActivity.class;
@@ -169,12 +166,11 @@ public class CheckInActivity extends AppCompatActivity {
 
                 @Override
                 protected String doInBackground(String... strings) {
-                    //public ClientInfo(int tableId, String clientName, char clientSex, byte peopleOnTable) {
                     int tableID = hashMapMesas.get( (String) spinner2.getSelectedItem() );
 
                     byte peopleOnTable = (byte) (spinner.getSelectedItemPosition() + 1);
 
-                    ClientInfo cliInfoSubmit = new ClientInfo( tableID, mEditText.getText().toString(),  sexAsString().charAt( 0 ), peopleOnTable );
+                    ClientInfo cliInfoSubmit = new ClientInfo( tableID, mEditText.getText().toString(),  sexAsString().charAt( 0 ), peopleOnTable, firebaseUserToken );
                     Genson genson = new Genson();
                     String serializedCliInfo = genson.serialize( cliInfoSubmit );
 
@@ -232,12 +228,9 @@ public class CheckInActivity extends AppCompatActivity {
                     String chairsJson = cons.get( this.getApiRoute() );
                     return chairsJson;
                 }catch (Exception e){
-                    new SimpleAlert().alertOk(
-                            "Erro de conexão",
-                            "Não foi possível conectar ao serviço, verifique sua conexão com a internet ou tente conectar mais tarde.",
-                            contextReference );
+                    e.printStackTrace();
+                    return null;
                 }
-                return null;
             }
 
             @Override
@@ -245,7 +238,10 @@ public class CheckInActivity extends AppCompatActivity {
                 super.onPostExecute( chairsJson );
 
                 if(chairsJson == null){
-                    return;
+                    new SimpleAlert().alertOk(
+                            "Erro de conexão",
+                            "Não foi possível conectar ao serviço, verifique sua conexão com a internet ou tente conectar mais tarde.",
+                            contextReference );
                 }
 
                 Genson genson = new Genson();

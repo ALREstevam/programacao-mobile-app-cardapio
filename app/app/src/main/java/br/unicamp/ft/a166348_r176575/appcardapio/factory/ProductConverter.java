@@ -3,6 +3,7 @@ package br.unicamp.ft.a166348_r176575.appcardapio.factory;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.unicamp.ft.a166348_r176575.appcardapio.pojo.ProdStatus;
 import br.unicamp.ft.a166348_r176575.appcardapio.pojo.Product;
 import br.unicamp.ft.a166348_r176575.appcardapio.pojo.ProductSendable;
 import br.unicamp.ft.a166348_r176575.appcardapio.sell.SellableProduct;
@@ -18,7 +19,7 @@ public class ProductConverter {
     }
 
     static public SellableProduct sendableToSellable(ProductSendable prod){
-        return new SellableProduct( prod.getName(), prod.getDescription(), prod.getPicture(), prod.getPrice(), prod.getProdutctId(), 0, "" );
+        return new SellableProduct( prod.getName(), prod.getDescription(), prod.getPicture(), prod.getPrice(), prod.getProdutctId(), 0, ProdStatus.SEM_STATUS.getStatusAsText() );
     }
 
     static public SellableProduct productToSellable(Product product){
